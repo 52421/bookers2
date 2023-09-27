@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script src="https://kit.fontawesome.com/a2b7a944cd.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <header class="hadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+           </button>
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+         <li class="nav-item">
+          <%= link_to "Home", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+         </li>
+         <li class="nav-item">
+          <%= link_to 'About', new_post_image_path, class: 'nav-link text-dark' %>
+         </li>
+         <li class="nav-item">
+          <%= link_to 'Sign up', user_path(current_user.id), class: 'nav-link text-dark' %>
+         </li>
+         <li class="nav-item">
+          <%= link_to 'Log in', user_path(current_user.id), class: 'nav-link text-dark' %>
+         </li>
+          <% else %>
+         <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
+         </li>
+         <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+         </li>
+          <% end %>
+          </ul>
+         </div>
+        </div>
+      </nav>
+    </header>
+    <div class="body">
+      <p class="notice"><%= notice %></p>
+
+      <%= yield %>
+
+
+        <footer>
+          <p class="text-right"> CopyRight Infratop.inc</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
