@@ -1,15 +1,19 @@
-<body>
- <header>
-<a class="navbar-brand"></a>
- <span>Bookers</span>
+<div class="row">
+	<div class="main col-md-offset-3 col-md-6">
+		<h1>welcome to<span class="fa-solid fa-book"></span>
+			<strong>Bookers</strong>  !!</h1>
+			 <p>In <span class="fa-solid fa-book"></span><strong>Bookers</strong>,</p>
+		 	<p>you can share and exchange your opinions , inpressions , and emotions</p>
+			 <p>about varioius books!</p>
 
- </header>
+			<div class="btn-wrapper">
+				<div class="row">
+					<p><%=link_to "Log in", new_user_session_path, class: "btn btn-info col-xs-10 col-xs-offset-1" %></p>
+				</div>
+				<div class="row">
+					<p><%=link_to "Sign up", new_user_registration_path, class: "btn btn-success col-xs-10 col-xs-offset-1" %></p>
+				</div>
+			</div>
 
-<p>welcome to Bookers !!</p></br>
-<p>In Bookers,</p></br>
-<p>you can share and exchange your opinions , inpressions , and emotions</p></br>
-<p>about various books!</p></br>
-
- <p class="link-others"><%= link_to "Log in", '/users/sign_in' %>
- <p class="link-others"><%= link_to "Sign in", '/users/sign_up' %>
-</body>
+	</div>
+</div>
