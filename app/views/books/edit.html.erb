@@ -1,0 +1,25 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h1>Editing Book</h1>
+     <form action="/books/id" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="yG63yLhbprOl7gqSza8KV0qpzJ8UN9ALFgGFL0L_mpc4JUwqXTT8wUh3y4-gSzz3bzJfI3CxeZqHPbqDTSoSqw" autocomplete="off">
+  <div class="form-group">
+    <label for="book_title">Title</label>
+     <input class="form-control book_title" type="text" value="test1" name="book[title]" id="book_title">
+  </div>
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+     <textarea class="form-control book_body" name="book[body]" id="book_body">test1</textarea>
+  </div>
+  <div class="form-group">
+    <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+  </div>
+    </form>
+    <div class="menu">
+      <%= link_to "Show", book_path(@book) %>
+      |
+      <%= link_to "Back", books_path %>
+    </div>
+    </div>
+  <div class="col-md-8 offset-md-1">
+</div>

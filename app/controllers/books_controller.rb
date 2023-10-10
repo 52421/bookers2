@@ -2,25 +2,26 @@ class BooksController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def index
-    @books = Book.all
     @book = Book.new
+    @books = Book.all
+    @user = current_user
   end
   
   def show
-    @newbook = Book.new
-    @book = Book.page(params[:page])
+    @book = Book.new
+    @book = Book.find(params[:id])
     @user = @book.user
   end
   
   def create
     @book = Book.new(book_params)
-    @book.user_id = current_user.id
+    @book.user = @current_user_id
      if @book.save
        flash[:notice] = "You have created book successfully."
        redirect_to book_path
      else
-       @books = Book.all
-       render 'index'
+       flash.now[:alert] = "errors prohibited this book from being saved."
+       render :index
      end
   end  
   

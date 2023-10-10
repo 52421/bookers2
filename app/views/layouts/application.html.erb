@@ -11,14 +11,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="d-flex flex-column vh-100">
-     <header class="navbar navbar-fixed-top navbar-inverse">
+    <header>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-
-        <nav class="nav navbar-nav navbar-left">
+        <a class="navbar-brand ">
           <span>Bookers</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
+        </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+          </span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li><%= link_to ' Home', user_path(current_user), class: 'fa-solid fa-house' %></li>
               <li><%= link_to ' Users', users_path, class: 'fa-solid fa-user' %></li>
@@ -31,19 +35,24 @@
               <li><%= link_to ' login', new_user_session_path, class: 'fa-solid fa-arrow-right-to-bracket' %></li>
             <% end %>
           </ul>
-        </nav>
-
+         </div>
       </div>
+     </nav>
     </header>
     <div class="body">
       <p class="notice"><%= notice %></p>
 
       <%= yield %>
 
-
-        <footer>
-          <p class="text-right"> CopyRight Infratop.inc</p>
-        </footer>
+       <footer>
+        <div class="container mt-5">
+         <div class="row">
+    	    <div class="mx-auto">
+    		   <p>CopyRight Infratop.inc</p>
+    	    </div>
+         </div>
+        </div>
+       </footer>
       </div>
     </div>
   </body>
