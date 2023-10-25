@@ -1,8 +1,8 @@
 <div class="container">
  <div class="row">
-  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-au">
     <h1>Editing Book</h1>
-     <form action="/books/id" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="yG63yLhbprOl7gqSza8KV0qpzJ8UN9ALFgGFL0L_mpc4JUwqXTT8wUh3y4-gSzz3bzJfI3CxeZqHPbqDTSoSqw" autocomplete="off">
+     <form action="/books/105050" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="yG63yLhbprOl7gqSza8KV0qpzJ8UN9ALFgGFL0L_mpc4JUwqXTT8wUh3y4-gSzz3bzJfI3CxeZqHPbqDTSoSqw" autocomplete="off">
   <div class="form-group">
     <label for="book_title">Title</label>
      <input class="form-control book_title" type="text" value="test1" name="book[title]" id="book_title">
@@ -16,7 +16,7 @@
   </div>
     </form>
     <div class="menu">
-      <%= link_to "Show", book_path(@book) %>
+      <%= link_to "Show", edit_book_path(@book) %>
       |
       <%= link_to "Back", books_path %>
     </div>
